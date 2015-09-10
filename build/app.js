@@ -93,6 +93,10 @@
 	  '/contact': function() {
 	    var page = React.createFactory(__webpack_require__(163));
 	    render(router.getRoute(), page);
+	  },
+	  '/history': function() {
+	    var page = React.createFactory(__webpack_require__(164));
+	    render(router.getRoute(), page);
 	  }
 	});
 
@@ -21319,6 +21323,9 @@
 	          ), 
 	          React.DOM.li({className: this._checkUri('contact')}, 
 	            Link({ to: '/contact' }, 'Contact')
+	          ), 
+	          React.DOM.li({className: this._checkUri('history')}, 
+	            Link({ to: '/history' }, 'History')
 	          )
 	        )
 	      )
@@ -21422,6 +21429,52 @@
 	});
 
 	module.exports = ContactPage;
+
+
+/***/ },
+/* 164 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * @jsx React.DOM
+	 */
+	'use strict';
+
+	var React = __webpack_require__(1);
+	var DefaultLayout = React.createFactory(__webpack_require__(160));
+
+	var HistoryPage = React.createClass({
+	  displayName: 'History page',
+
+	  getDefaultProps: function() {
+	    return {
+	      layout: DefaultLayout
+	    };
+	  },
+
+	  render: function() {
+	    return (
+	      React.DOM.div(null, 
+	React.DOM.nav({className: "bar bar-tab"}, 
+	  React.DOM.a({className: "tab-item active", href: "#"}, 
+	    React.DOM.span({className: "icon icon-home"}), 
+	    React.DOM.span({className: "tab-label"}, "Home")
+	  ), 
+	  React.DOM.a({className: "tab-item", href: "#"}, 
+	    React.DOM.span({className: "icon icon-person"}), 
+	    React.DOM.span({className: "tab-label"}, "Profile")
+	  ), 
+	  React.DOM.a({className: "tab-item", href: "#"}, 
+	    React.DOM.span({className: "icon icon-star-filled"}), 
+	    React.DOM.span({className: "tab-label"}, "Favorites")
+	    )
+	)
+	      )
+	    );
+	  }
+	});
+
+	module.exports = HistoryPage;
 
 
 /***/ }
