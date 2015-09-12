@@ -5,9 +5,13 @@
 
 var React = require('react');
 var DefaultLayout = React.createFactory(require('../layouts/Default'));
+var wordsList = require('3000-words-list');
 
 var HistoryPage = React.createClass({
   displayName: 'History page',
+  getInitialState: function(){
+    return null;
+  },
 
   getDefaultProps: function() {
     return {
@@ -18,20 +22,22 @@ var HistoryPage = React.createClass({
   render: function() {
     return (
       <div>
-<nav className="bar bar-tab">
-  <a className="tab-item active" href="#">
-    <span className="icon icon-home"></span>
-    <span className="tab-label">Home</span>
-  </a>
-  <a className="tab-item" href="#">
-    <span className="icon icon-person"></span>
-    <span className="tab-label">Profile</span>
-  </a>
-  <a className="tab-item" href="#">
-    <span className="icon icon-star-filled"></span>
-    <span className="tab-label">Favorites</span>
-    </a>
-</nav>
+      <div className="row">
+            <h1 className="text-center">History</h1>
+      </div>
+        <form>
+          <input type="search" placeholder="Search" />
+          <button className="btn btn-primary">
+            <span className="icon icon-search"></span>
+              Search
+          </button>
+        </form>
+                  <button className="btn btn-primary">
+            <span className="icon icon-close"></span>
+              Clear
+          </button>
+
+
       </div>
     );
   }

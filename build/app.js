@@ -21442,9 +21442,13 @@
 
 	var React = __webpack_require__(1);
 	var DefaultLayout = React.createFactory(__webpack_require__(160));
+	var wordsList = __webpack_require__(165);
 
 	var HistoryPage = React.createClass({
 	  displayName: 'History page',
+	  getInitialState: function(){
+	    return null;
+	  },
 
 	  getDefaultProps: function() {
 	    return {
@@ -21455,26 +21459,249 @@
 	  render: function() {
 	    return (
 	      React.DOM.div(null, 
-	React.DOM.nav({className: "bar bar-tab"}, 
-	  React.DOM.a({className: "tab-item active", href: "#"}, 
-	    React.DOM.span({className: "icon icon-home"}), 
-	    React.DOM.span({className: "tab-label"}, "Home")
-	  ), 
-	  React.DOM.a({className: "tab-item", href: "#"}, 
-	    React.DOM.span({className: "icon icon-person"}), 
-	    React.DOM.span({className: "tab-label"}, "Profile")
-	  ), 
-	  React.DOM.a({className: "tab-item", href: "#"}, 
-	    React.DOM.span({className: "icon icon-star-filled"}), 
-	    React.DOM.span({className: "tab-label"}, "Favorites")
-	    )
-	)
+	      React.DOM.div({className: "row"}, 
+	            React.DOM.h1({className: "text-center"}, "History")
+	      ), 
+	        React.DOM.form(null, 
+	          React.DOM.input({type: "search", placeholder: "Search"}), 
+	          React.DOM.button({className: "btn btn-primary"}, 
+	            React.DOM.span({className: "icon icon-search"}), 
+	              "Search"
+	          )
+	        ), 
+	                  React.DOM.button({className: "btn btn-primary"}, 
+	            React.DOM.span({className: "icon icon-close"}), 
+	              "Clear"
+	          )
+
+
 	      )
 	    );
 	  }
 	});
 
 	module.exports = HistoryPage;
+
+
+/***/ },
+/* 165 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var wordsList = __webpack_require__(166);
+
+	module.exports = {
+
+	  getLength: function () {
+	    return wordsList.length;
+	  },
+
+	  wordsList: function () {
+	    return wordsList;
+	  }
+
+	};
+
+
+/***/ },
+/* 166 */
+/***/ function(module, exports) {
+
+	[
+	  {
+	    "name": "the",
+	    "kind": "",
+	    "spelling": "",
+	    "pronunciation": "",
+	    "define": [
+	      ""
+	    ],
+	    "examples": [
+	      ""
+	    ]
+	  },
+	  {
+	    "name": "of",
+	    "kind": "",
+	    "spelling": "",
+	    "pronunciation": "",
+	    "define": [
+	      ""
+	    ],
+	    "examples": [
+	      ""
+	    ]
+	  },
+	  {
+	    "name": "and",
+	    "kind": "",
+	    "spelling": "",
+	    "pronunciation": "",
+	    "define": [
+	      ""
+	    ],
+	    "examples": [
+	      ""
+	    ]
+	  },
+	  {
+	    "name": "a",
+	    "kind": "",
+	    "spelling": "",
+	    "pronunciation": "",
+	    "define": [
+	      ""
+	    ],
+	    "examples": [
+	      ""
+	    ]
+	  },
+	  {
+	    "name": "to",
+	    "kind": "",
+	    "spelling": "",
+	    "pronunciation": "",
+	    "define": [
+	      ""
+	    ],
+	    "examples": [
+	      ""
+	    ]
+	  },
+	  {
+	    "name": "in",
+	    "kind": "",
+	    "spelling": "",
+	    "pronunciation": "",
+	    "define": [
+	      ""
+	    ],
+	    "examples": [
+	      ""
+	    ]
+	  },
+	  {
+	    "name": "is",
+	    "kind": "",
+	    "spelling": "",
+	    "pronunciation": "",
+	    "define": [
+	      ""
+	    ],
+	    "examples": [
+	      ""
+	    ]
+	  },
+	  {
+	    "name": "you",
+	    "kind": "",
+	    "spelling": "",
+	    "pronunciation": "",
+	    "define": [
+	      ""
+	    ],
+	    "examples": [
+	      ""
+	    ]
+	  },
+	  {
+	    "name": "that",
+	    "kind": "",
+	    "spelling": "",
+	    "pronunciation": "",
+	    "define": [
+	      ""
+	    ],
+	    "examples": [
+	      ""
+	    ]
+	  },
+	  {
+	    "name": "it",
+	    "kind": "",
+	    "spelling": "",
+	    "pronunciation": "",
+	    "define": [
+	      ""
+	    ],
+	    "examples": [
+	      ""
+	    ]
+	  },
+	  {
+	    "name": "he",
+	    "kind": "",
+	    "spelling": "",
+	    "pronunciation": "",
+	    "define": [
+	      ""
+	    ],
+	    "examples": [
+	      ""
+	    ]
+	  },
+	  {
+	    "name": "for",
+	    "kind": "",
+	    "spelling": "",
+	    "pronunciation": "",
+	    "define": [
+	      ""
+	    ],
+	    "examples": [
+	      ""
+	    ]
+	  },
+	  {
+	    "name": "was",
+	    "kind": "",
+	    "spelling": "",
+	    "pronunciation": "",
+	    "define": [
+	      ""
+	    ],
+	    "examples": [
+	      ""
+	    ]
+	  },
+	  {
+	    "name": "on",
+	    "kind": "",
+	    "spelling": "",
+	    "pronunciation": "",
+	    "define": [
+	      ""
+	    ],
+	    "examples": [
+	      ""
+	    ]
+	  },
+	  {
+	    "name": "are",
+	    "kind": "",
+	    "spelling": "",
+	    "pronunciation": "",
+	    "define": [
+	      ""
+	    ],
+	    "examples": [
+	      ""
+	    ]
+	  },
+	  {
+	    "name": "as",
+	    "kind": "",
+	    "spelling": "",
+	    "pronunciation": "",
+	    "define": [
+	      ""
+	    ],
+	    "examples": [
+	      ""
+	    ]
+	  }
+	]
 
 
 /***/ }
