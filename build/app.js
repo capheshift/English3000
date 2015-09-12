@@ -93,6 +93,10 @@
 	  '/contact': function() {
 	    var page = React.createFactory(__webpack_require__(163));
 	    render(router.getRoute(), page);
+	  },
+	  '/history': function() {
+	    var page = React.createFactory(__webpack_require__(164));
+	    render(router.getRoute(), page);
 	  }
 	});
 
@@ -21247,10 +21251,58 @@
 	    };
 	  },
 
+	  getInitialState: function() {
+	    return {
+	      dataContext: ['list1', 'list2', 'list3']
+	    };
+	  },
+
 	  render: function() {
+	    var listRender = this.state.dataContext.map(function(item) {
+	      return (
+	        React.DOM.li(null, 
+	          React.DOM.a({href: "#"}, "item one"), 
+	          React.DOM.p(null, item)
+	        )
+	      );
+	    })
+
 	    return (
 	      React.DOM.div(null, 
-	        React.DOM.p(null, "HOME PAGE")
+	        React.DOM.div({className: "search-region"}, 
+	          React.DOM.div({className: "search-left"}, 
+	            React.DOM.input({type: "text", className: "search-box"})
+	          ), 
+	          React.DOM.div({className: "search-right"}, 
+	            React.DOM.button({id: "btnSearch", className: "search-button"}, "sss")
+	          )
+	        ), 
+
+	        React.DOM.div({className: "list-word"}, 
+	          React.DOM.ul(null, 
+	            listRender, 
+	            React.DOM.li(null, 
+	              React.DOM.a({href: "#"}, "item one"), 
+	              React.DOM.p(null, " detail")
+	            ), 
+	            React.DOM.li(null, 
+	              React.DOM.a({href: "#"}, "item one"), 
+	              React.DOM.p(null, " detail")
+	            ), 
+	            React.DOM.li(null, 
+	              React.DOM.a({href: "#"}, "item one"), 
+	              React.DOM.p(null, " detail")
+	            ), 
+	            React.DOM.li(null, 
+	              React.DOM.a({href: "#"}, "item one"), 
+	              React.DOM.p(null, " detail")
+	            ), 
+	            React.DOM.li(null, 
+	              React.DOM.a({href: "#"}, "item one"), 
+	              React.DOM.p(null, " detail")
+	            )
+	          )
+	        )
 	      )
 	    );
 	  }
@@ -21319,6 +21371,9 @@
 	          ), 
 	          React.DOM.li({className: this._checkUri('contact')}, 
 	            Link({ to: '/contact' }, 'Contact')
+	          ), 
+	          React.DOM.li({className: this._checkUri('history')}, 
+	            Link({ to: '/history' }, 'History')
 	          )
 	        )
 	      )
@@ -21392,15 +21447,15 @@
 
 /***/ },
 /* 163 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
 	/**
 	 * @jsx React.DOM
 	 */
-	'use strict';
+	/*'use strict';
 
-	var React = __webpack_require__(1);
-	var DefaultLayout = React.createFactory(__webpack_require__(160));
+	var React = require('react');
+	var DefaultLayout = React.createFactory(require('../layouts/Default'));
 
 	var ContactPage = React.createClass({
 	  displayName: 'Contact page',
@@ -21413,15 +21468,61 @@
 
 	  render: function() {
 	    return (
+	      <div>
+	        <p>CONTACT PAGE</p>
+	        <button>Skeleton</button>
+	      </div>
+	    );
+	  }
+	});
+
+	module.exports = ContactPage;*/
+
+
+/***/ },
+/* 164 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * @jsx React.DOM
+	 */
+	'use strict';
+
+	var React = __webpack_require__(1);
+	var DefaultLayout = React.createFactory(__webpack_require__(160));
+
+	var HistoryPage = React.createClass({
+	  displayName: 'History page',
+
+	  getDefaultProps: function() {
+	    return {
+	      layout: DefaultLayout
+	    };
+	  },
+
+	  render: function() {
+	    return (
 	      React.DOM.div(null, 
-	        React.DOM.p(null, "CONTACT PAGE"), 
-	        React.DOM.button(null, "Skeleton")
+	React.DOM.nav({className: "bar bar-tab"}, 
+	  React.DOM.a({className: "tab-item active", href: "#"}, 
+	    React.DOM.span({className: "icon icon-home"}), 
+	    React.DOM.span({className: "tab-label"}, "Home")
+	  ), 
+	  React.DOM.a({className: "tab-item", href: "#"}, 
+	    React.DOM.span({className: "icon icon-person"}), 
+	    React.DOM.span({className: "tab-label"}, "Profile")
+	  ), 
+	  React.DOM.a({className: "tab-item", href: "#"}, 
+	    React.DOM.span({className: "icon icon-star-filled"}), 
+	    React.DOM.span({className: "tab-label"}, "Favorites")
+	    )
+	)
 	      )
 	    );
 	  }
 	});
 
-	module.exports = ContactPage;
+	module.exports = HistoryPage;
 
 
 /***/ }
