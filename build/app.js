@@ -21251,10 +21251,58 @@
 	    };
 	  },
 
+	  getInitialState: function() {
+	    return {
+	      dataContext: ['list1', 'list2', 'list3']
+	    };
+	  },
+
 	  render: function() {
+	    var listRender = this.state.dataContext.map(function(item) {
+	      return (
+	        React.DOM.li(null, 
+	          React.DOM.a({href: "#"}, "item one"), 
+	          React.DOM.p(null, item)
+	        )
+	      );
+	    })
+
 	    return (
 	      React.DOM.div(null, 
-	        React.DOM.p(null, "HOME PAGE")
+	        React.DOM.div({className: "search-region"}, 
+	          React.DOM.div({className: "search-left"}, 
+	            React.DOM.input({type: "text", className: "search-box"})
+	          ), 
+	          React.DOM.div({className: "search-right"}, 
+	            React.DOM.button({id: "btnSearch", className: "search-button"}, "sss")
+	          )
+	        ), 
+
+	        React.DOM.div({className: "list-word"}, 
+	          React.DOM.ul(null, 
+	            listRender, 
+	            React.DOM.li(null, 
+	              React.DOM.a({href: "#"}, "item one"), 
+	              React.DOM.p(null, " detail")
+	            ), 
+	            React.DOM.li(null, 
+	              React.DOM.a({href: "#"}, "item one"), 
+	              React.DOM.p(null, " detail")
+	            ), 
+	            React.DOM.li(null, 
+	              React.DOM.a({href: "#"}, "item one"), 
+	              React.DOM.p(null, " detail")
+	            ), 
+	            React.DOM.li(null, 
+	              React.DOM.a({href: "#"}, "item one"), 
+	              React.DOM.p(null, " detail")
+	            ), 
+	            React.DOM.li(null, 
+	              React.DOM.a({href: "#"}, "item one"), 
+	              React.DOM.p(null, " detail")
+	            )
+	          )
+	        )
 	      )
 	    );
 	  }
@@ -21399,15 +21447,15 @@
 
 /***/ },
 /* 163 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
 	/**
 	 * @jsx React.DOM
 	 */
-	'use strict';
+	/*'use strict';
 
-	var React = __webpack_require__(1);
-	var DefaultLayout = React.createFactory(__webpack_require__(160));
+	var React = require('react');
+	var DefaultLayout = React.createFactory(require('../layouts/Default'));
 
 	var ContactPage = React.createClass({
 	  displayName: 'Contact page',
@@ -21420,15 +21468,15 @@
 
 	  render: function() {
 	    return (
-	      React.DOM.div(null, 
-	        React.DOM.p(null, "CONTACT PAGE"), 
-	        React.DOM.button(null, "Skeleton")
-	      )
+	      <div>
+	        <p>CONTACT PAGE</p>
+	        <button>Skeleton</button>
+	      </div>
 	    );
 	  }
 	});
 
-	module.exports = ContactPage;
+	module.exports = ContactPage;*/
 
 
 /***/ },

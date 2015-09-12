@@ -1972,3 +1972,38 @@ select {
 
 .icon-left:before {
   content: '\e822'; }
+
+.search-region {
+  width: 100%;
+  height: 35px; }
+
+.search-left {
+  width: 85%;
+  height: 35px;
+  float: left; }
+
+.search-right {
+  width: 15%;
+  height: 35px;
+  float: left; }
+
+.search-box {
+  width: 100%;
+  height: 33px; }
+
+.search-button {
+  width: 100%;
+  height: 35px;
+  background-image: url(../search.png) no-repeat;
+  padding: 0; }
+
+.list-word {
+  margin-top: 20px;
+  width: 100%;
+  border-top: 1px solid #CCC; }
+
+.list-word > ul > li {
+  list-style-type: none;
+  font-size: 28px;
+  border-bottom: 1px solid #CCC;
+  padding: 20px 0px 10px 10px; }
