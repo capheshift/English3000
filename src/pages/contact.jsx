@@ -1,7 +1,7 @@
 /**
  * @jsx React.DOM
  */
-'use strict';
+/*'use strict';
 
 var React = require('react');
 var DefaultLayout = React.createFactory(require('../layouts/Default'));
@@ -25,4 +25,4 @@ var ContactPage = React.createClass({
   }
 });
 
-module.exports = ContactPage;
+module.exports = ContactPage;*/
