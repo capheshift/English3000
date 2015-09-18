@@ -21466,7 +21466,7 @@
 	        React.DOM.li(null, 
 	          React.DOM.a({href: "#"}, 
 	            React.DOM.p({className: "word-name"}, item.name), 
-	            React.DOM.p({className: "example"}, "example")
+	            React.DOM.p({className: "example"}, item.define, " meaning")
 	          )
 	        )
 	      );
@@ -21532,7 +21532,7 @@
 	    "spelling": "",
 	    "pronunciation": "",
 	    "define": [
-	      ""
+	      "ih"
 	    ],
 	    "examples": [
 	      ""

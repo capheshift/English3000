@@ -29,7 +29,7 @@ var HistoryPage = React.createClass({
         <li>
           <a href="#">
             <p className="word-name">{item.name}</p>
-            <p className="example">example</p>
+            <p className="example">{item.define} meaning</p>
           </a>
         </li>
       );
