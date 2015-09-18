@@ -14,19 +14,13 @@ var Navbar = React.createClass({
 
   render() {
     return (
-      <nav className="navbar">
-        {Link({ className: 'navbar-brand', to: '/' }, 'Welcome')}
-        <ul className="nav navbar-nav">
-          <li className={this._checkUri('')}>
-            {Link({ to: '/' }, 'Home')}
-          </li>
-          <li className={this._checkUri('contact')}>
-            {Link({ to: '/contact' }, 'Contact')}
-          </li>
-          <li className={this._checkUri('history')}>
-            {Link({ to: '/history' }, 'History')}
-          </li>
-        </ul>
+      <nav className="bar bar-tab">
+              <a className="tab-item active" href="/">
+                Home
+              </a>
+              <a className="tab-item" href="/#/history">
+                History
+              </a>
       </nav>
     );
   },

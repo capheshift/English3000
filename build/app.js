@@ -90,12 +90,8 @@
 	    var page = React.createFactory(__webpack_require__(159));
 	    render(router.getRoute(), page);
 	  },
-	  '/contact': function() {
-	    var page = React.createFactory(__webpack_require__(163));
-	    render(router.getRoute(), page);
-	  },
 	  '/history': function() {
-	    var page = React.createFactory(__webpack_require__(164));
+	    var page = React.createFactory(__webpack_require__(163));
 	    render(router.getRoute(), page);
 	  }
 	});
@@ -21363,19 +21359,13 @@
 
 	  render:function() {
 	    return (
-	      React.DOM.nav({className: "navbar"}, 
-	        Link({ className: 'navbar-brand', to: '/' }, 'Welcome'), 
-	        React.DOM.ul({className: "nav navbar-nav"}, 
-	          React.DOM.li({className: this._checkUri('')}, 
-	            Link({ to: '/' }, 'Home')
-	          ), 
-	          React.DOM.li({className: this._checkUri('contact')}, 
-	            Link({ to: '/contact' }, 'Contact')
-	          ), 
-	          React.DOM.li({className: this._checkUri('history')}, 
-	            Link({ to: '/history' }, 'History')
-	          )
-	        )
+	      React.DOM.nav({className: "bar bar-tab"}, 
+	              React.DOM.a({className: "tab-item active", href: "/"}, 
+	                "Home"
+	              ), 
+	              React.DOM.a({className: "tab-item", href: "/#/history"}, 
+	                "History"
+	              )
 	      )
 	    );
 	  },
@@ -21447,40 +21437,6 @@
 
 /***/ },
 /* 163 */
-/***/ function(module, exports) {
-
-	/**
-	 * @jsx React.DOM
-	 */
-	/*'use strict';
-
-	var React = require('react');
-	var DefaultLayout = React.createFactory(require('../layouts/Default'));
-
-	var ContactPage = React.createClass({
-	  displayName: 'Contact page',
-
-	  getDefaultProps: function() {
-	    return {
-	      layout: DefaultLayout
-	    };
-	  },
-
-	  render: function() {
-	    return (
-	      <div>
-	        <p>CONTACT PAGE</p>
-	        <button>Skeleton</button>
-	      </div>
-	    );
-	  }
-	});
-
-	module.exports = ContactPage;*/
-
-
-/***/ },
-/* 164 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -21490,7 +21446,7 @@
 
 	var React = __webpack_require__(1);
 	var DefaultLayout = React.createFactory(__webpack_require__(160));
-	var wordsList = __webpack_require__(165);
+	var wordsList = __webpack_require__(164);
 
 	var HistoryPage = React.createClass({
 	  displayName: 'History page',
@@ -21545,13 +21501,13 @@
 	module.exports = HistoryPage;
 
 /***/ },
-/* 165 */
+/* 164 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var wordsList = __webpack_require__(166);
-	var lodash = __webpack_require__(167);
+	var wordsList = __webpack_require__(165);
+	var lodash = __webpack_require__(166);
 
 	module.exports = {
 
@@ -21570,7 +21526,7 @@
 
 
 /***/ },
-/* 166 */
+/* 165 */
 /***/ function(module, exports) {
 
 	module.exports = [
@@ -21770,7 +21726,7 @@
 
 
 /***/ },
-/* 167 */
+/* 166 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(module, global) {/**
@@ -34125,10 +34081,10 @@
 	  }
 	}.call(this));
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(168)(module), (function() { return this; }())))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(167)(module), (function() { return this; }())))
 
 /***/ },
-/* 168 */
+/* 167 */
 /***/ function(module, exports) {
 
 	module.exports = function(module) {
