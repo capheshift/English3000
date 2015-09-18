@@ -9,9 +9,6 @@ var wordsList = require('3000-words-list');
 
 var HistoryPage = React.createClass({
   displayName: 'History page',
-  getInitialState: function(){
-    return null;
-  },
 
   getDefaultProps: function() {
     return {
@@ -19,25 +16,42 @@ var HistoryPage = React.createClass({
     };
   },
 
+  getInitialState: function() {
+    console.log('wordsList', wordsList.getAll());
+    return {
+      dataContext: wordsList.getAll()
+    }
+    },
+
   render: function() {
+    var listRender = this.state.dataContext.map(function(item) {
+      return (
+        <li>
+          <a href="#">
+            <p className="word-name">{item.name}</p>
+            <p className="example">example</p>
+          </a>
+        </li>
+      );
+    })
+
     return (
       <div>
-      <div className="row">
-            <h1 className="text-center">History</h1>
-      </div>
-        <form>
-          <input type="search" placeholder="Search" />
-          <button className="btn btn-primary">
-            <span className="icon icon-search"></span>
-              Search
-          </button>
-        </form>
-                  <button className="btn btn-primary">
-            <span className="icon icon-close"></span>
-              Clear
-          </button>
+      <h1>History</h1>
+        <div className="search-region">
+          <div className ="search-left">
+            <input type="text" className="search-box"/>
+          </div>
+          <div className ="search-right">
+            <button id="btnSearch" className="search-button">Search History</button>
+          </div>
+        </div>
 
-
+        <div className="list-word">
+          <ul>
+            {listRender}
+          </ul>
+        </div>
       </div>
     );
   }
