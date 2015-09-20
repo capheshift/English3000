@@ -14,20 +14,28 @@ var Navbar = React.createClass({
 
   render() {
     return (
-      <nav className="navbar">
-        {Link({ className: 'navbar-brand', to: '/' }, 'Welcome')}
-        <ul className="nav navbar-nav">
-          <li className={this._checkUri('')}>
-            {Link({ to: '/' }, 'Home')}
-          </li>
-          <li className={this._checkUri('contact')}>
-            {Link({ to: '/contact' }, 'Contact')}
-          </li>
-          <li className={this._checkUri('history')}>
-            {Link({ to: '/history' }, 'History')}
-          </li>
-        </ul>
-      </nav>
+        <nav class="bar bar-tab">
+          <a class="tab-item active" href="#">
+            <span class="icon icon-home"></span>
+            <span class="tab-label">Home</span>
+          </a>
+          <a class="tab-item" href="#">
+            <span class="icon icon-person"></span>
+            <span class="tab-label">Profile</span>
+          </a>
+          <a class="tab-item" href="#">
+            <span class="icon icon-star-filled"></span>
+            <span class="tab-label">Favorites</span>
+          </a>
+          <a class="tab-item" href="#">
+            <span class="icon icon-search"></span>
+            <span class="tab-label">Search</span>
+          </a>
+          <a class="tab-item" href="#">
+            <span class="icon icon-gear"></span>
+            <span class="tab-label">Settings</span>
+          </a>
+        </nav>
     );
   },
 
