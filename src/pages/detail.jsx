@@ -5,6 +5,7 @@
 
 var React = require('react');
 var DefaultLayout = React.createFactory(require('../layouts/Default'));
+var wordsList = require('english3kdata');
 
 var DetailPage = React.createClass({
   displayName: 'Detail page',

@@ -5,7 +5,7 @@
 
 var React = require('react');
 var DefaultLayout = React.createFactory(require('../layouts/Default'));
-
+var wordsList = require('english3kdata');
 
 var HomePage = React.createClass({
   displayName: 'Home page',
