@@ -2012,14 +2012,6 @@ a {
   width: 100%;
   list-style-type: none;
   font-size: 28px;
-<<<<<<< HEAD
-  border-bottom: 1px solid #CCC;
-  padding: 20px 0px 10px 10px; }
-
-@font-face {
-  src: url("fonts/ratchicons.eot");
-  src: url("fonts/FontName-webfont.woff") format("woff"), url("fonts/FontName-webfont.ttf") format("truetype"); }
-=======
   padding: 10px 0px 0px 10px; }
 
 .list-word ul li:hover {
@@ -2066,4 +2058,7 @@ a {
 .container {
   margin: auto;
   padding: 20px 10px 10px 10px; }
->>>>>>> feature/wordPage
+
+@font-face {
+  src: url("fonts/ratchicons.eot");
+  src: url("fonts/FontName-webfont.woff") format("woff"), url("fonts/FontName-webfont.ttf") format("truetype"); }

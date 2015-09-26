@@ -95,7 +95,7 @@
 	    render(router.getRoute(), page);
 	  },
 	  '/detail': function() {
-	    var page = React.createFactory(__webpack_require__(165));
+	    var page = React.createFactory(__webpack_require__(168));
 	    render(router.getRoute(), page);
 	  }
 	});
@@ -21255,9 +21255,12 @@
 	  getInitialState: function() {
 	    return {
 	      dataContext:
-	      [{word:"mountain", detail:"a large steep hill."},
+	      [
+	      {word:"mountain", detail:"a large steep hill."},
 	      {word:"tree", detail:"a woody perennial plant."},
-	      {word:"plant", detail:"a living organism of the kind exemplified by trees, shrubs, herbs."}]
+	      {word:"plant", detail:"a living organism of the kind exemplified by trees, shrubs, herbs."},
+	      {word:"plant", detail:"a living organism of the kind exemplified by trees, shrubs, herbs."}
+	      ]
 	    };
 	  },
 
@@ -21349,7 +21352,6 @@
 
 	  render:function() {
 	    return (
-<<<<<<< HEAD
 	      React.DOM.nav({className: "bar bar-tab"}, 
 	              React.DOM.a({className: "tab-item active", href: "/"}, 
 	                "Home"
@@ -21358,22 +21360,7 @@
 	                "History"
 	              )
 	      )
-=======
-	        React.DOM.nav({class: "bar-tab"}, 
-	          React.DOM.a({class: "tab-item", href: "#"}, 
-	            React.DOM.span({class: "icon icon-home"}), 
-	            React.DOM.span({class: "tab-label"}, "Historys")
-	          ), 
-	          React.DOM.a({class: "tab-item", href: "#"}, 
-	            React.DOM.span({class: "icon icon-person"}), 
-	            React.DOM.span({class: "tab-label"}, "Favorites")
-	          ), 
-	          React.DOM.a({class: "tab-item", href: "#"}, 
-	            React.DOM.span({class: "icon icon-gear"}), 
-	            React.DOM.span({class: "tab-label"}, "Search")
-	          )
-	        )
->>>>>>> feature/wordPage
+
 	    );
 	  },
 
@@ -21500,12 +21487,14 @@
 	            listRender
 	          )
 	        )
+
 	      )
 	    );
 	  }
 	});
 
 	module.exports = HistoryPage;
+
 
 /***/ },
 /* 164 */
@@ -21543,7 +21532,7 @@
 	    "spelling": "",
 	    "pronunciation": "",
 	    "define": [
-	      "ih"
+	      ""
 	    ],
 	    "examples": [
 	      ""
@@ -21731,7 +21720,6 @@
 	  }
 	]
 
-<<<<<<< HEAD
 
 /***/ },
 /* 166 */
@@ -22045,27 +22033,6 @@
 	      }
 	    }
 	    return 0;
-=======
-	  render: function() {
-	    return (
-	      React.DOM.div(null, 
-	        React.DOM.nav({className: "bar bar-tab"}, 
-	          React.DOM.a({className: "tab-item active", href: "#"}, 
-	            React.DOM.span({className: "icon icon-home"}), 
-	            React.DOM.span({className: "tab-label"}, "Home")
-	          ), 
-	          React.DOM.a({className: "tab-item", href: "#"}, 
-	            React.DOM.span({className: "icon icon-person"}), 
-	            React.DOM.span({className: "tab-label"}, "Profile")
-	          ), 
-	          React.DOM.a({className: "tab-item", href: "#"}, 
-	            React.DOM.span({className: "icon icon-star-filled"}), 
-	            React.DOM.span({className: "tab-label"}, "Favorites")
-	            )
-	        )
-	      )
-	    );
->>>>>>> feature/wordPage
 	  }
 
 	  /**
@@ -34129,7 +34096,7 @@
 
 
 /***/ },
-/* 165 */
+/* 168 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
