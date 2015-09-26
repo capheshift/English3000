@@ -5,7 +5,7 @@
 
 var React = require('react');
 var DefaultLayout = React.createFactory(require('../layouts/Default'));
-var wordsList = require('3000-words-list');
+var wordsList = require('english3kdata');
 
 var HistoryPage = React.createClass({
   displayName: 'History page',
@@ -29,7 +29,8 @@ var HistoryPage = React.createClass({
         <li>
           <a href="#">
             <p className="word-name">{item.name}</p>
-            <p className="example">{item.define} meaning</p>
+            <p className="example">{item.definition}</p>
+            <hr/>
           </a>
         </li>
       );
@@ -43,7 +44,7 @@ var HistoryPage = React.createClass({
             <input type="text" className="search-box"/>
           </div>
           <div className ="search-right">
-            <button id="btnSearch" className="search-button">Search History</button>
+            <button id="btnSearch" className="search-button">Search</button>
           </div>
         </div>
 
