@@ -22,6 +22,7 @@ var Navbar = React.createClass({
                 History
               </a>
       </nav>
+
     );
   },
 

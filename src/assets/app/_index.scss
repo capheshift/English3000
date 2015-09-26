@@ -1,6 +1,13 @@
+body{
+  margin: auto;
+  padding: 0;
+}
+a{
+  text-decoration: none;
+}
 .search-region{
   width: 100%;
-  height: 35px;
+  height: 45px;
 }
 .search-left{
   width: 85%;
@@ -14,22 +21,37 @@
 }
 .search-box{
   width: 100%;
-  height: 33px;
+  height: 35px;
 }
 .search-button{
   width: 100%;
   height: 35px;
-  background-image: url(../search.png) no-repeat;
+  background-repeat: no-repeat;
   padding: 0;
 }
 .list-word{
-  margin-top: 20px;
+  margin-top: 10px;
   width: 100%;
-  border-top: 1px solid #CCC;
 }
 .list-word > ul > li{
+  width: 100%;
   list-style-type: none;
   font-size: 28px;
-  border-bottom: 1px solid #CCC;
-  padding: 20px 0px 10px 10px;
+  padding: 10px 0px 0px 10px;
+}
+.list-word ul li:hover{
+  background-color: #F0F0F0;
+  box-shadow: 1px 1px 5px 5px #888888;
+}
+.list-word ul li a:hover{
+  text-decoration: none;
+}
+.word-name{
+  font-size: 24px;
+  font-weight: bold;
+  color: #330066;
+}
+.example{
+  font-style: italic;
+  color: #282828;
 }

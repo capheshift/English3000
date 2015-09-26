@@ -93,6 +93,10 @@
 	  '/history': function() {
 	    var page = React.createFactory(__webpack_require__(163));
 	    render(router.getRoute(), page);
+	  },
+	  '/detail': function() {
+	    var page = React.createFactory(__webpack_require__(165));
+	    render(router.getRoute(), page);
 	  }
 	});
 
@@ -21238,6 +21242,7 @@
 	var React = __webpack_require__(1);
 	var DefaultLayout = React.createFactory(__webpack_require__(160));
 
+
 	var HomePage = React.createClass({
 	  displayName: 'Home page',
 
@@ -21249,7 +21254,10 @@
 
 	  getInitialState: function() {
 	    return {
-	      dataContext: ['list1', 'list2', 'list3']
+	      dataContext:
+	      [{word:"mountain", detail:"a large steep hill."},
+	      {word:"tree", detail:"a woody perennial plant."},
+	      {word:"plant", detail:"a living organism of the kind exemplified by trees, shrubs, herbs."}]
 	    };
 	  },
 
@@ -21257,8 +21265,10 @@
 	    var listRender = this.state.dataContext.map(function(item) {
 	      return (
 	        React.DOM.li(null, 
-	          React.DOM.a({href: "#"}, "item one"), 
-	          React.DOM.p(null, item)
+	          React.DOM.a({href: "#/detail"}, 
+	            React.DOM.p({className: "word-name"}, item.word), 
+	            React.DOM.p({className: "example"}, item.detail)
+	          )
 	        )
 	      );
 	    })
@@ -21270,33 +21280,13 @@
 	            React.DOM.input({type: "text", className: "search-box"})
 	          ), 
 	          React.DOM.div({className: "search-right"}, 
-	            React.DOM.button({id: "btnSearch", className: "search-button"}, "sss")
+	            React.DOM.button({id: "btnSearch", className: "search-button"}, "S")
 	          )
 	        ), 
 
 	        React.DOM.div({className: "list-word"}, 
 	          React.DOM.ul(null, 
-	            listRender, 
-	            React.DOM.li(null, 
-	              React.DOM.a({href: "#"}, "item one"), 
-	              React.DOM.p(null, " detail")
-	            ), 
-	            React.DOM.li(null, 
-	              React.DOM.a({href: "#"}, "item one"), 
-	              React.DOM.p(null, " detail")
-	            ), 
-	            React.DOM.li(null, 
-	              React.DOM.a({href: "#"}, "item one"), 
-	              React.DOM.p(null, " detail")
-	            ), 
-	            React.DOM.li(null, 
-	              React.DOM.a({href: "#"}, "item one"), 
-	              React.DOM.p(null, " detail")
-	            ), 
-	            React.DOM.li(null, 
-	              React.DOM.a({href: "#"}, "item one"), 
-	              React.DOM.p(null, " detail")
-	            )
+	            listRender
 	          )
 	        )
 	      )
@@ -21359,6 +21349,7 @@
 
 	  render:function() {
 	    return (
+<<<<<<< HEAD
 	      React.DOM.nav({className: "bar bar-tab"}, 
 	              React.DOM.a({className: "tab-item active", href: "/"}, 
 	                "Home"
@@ -21367,6 +21358,22 @@
 	                "History"
 	              )
 	      )
+=======
+	        React.DOM.nav({class: "bar-tab"}, 
+	          React.DOM.a({class: "tab-item", href: "#"}, 
+	            React.DOM.span({class: "icon icon-home"}), 
+	            React.DOM.span({class: "tab-label"}, "Historys")
+	          ), 
+	          React.DOM.a({class: "tab-item", href: "#"}, 
+	            React.DOM.span({class: "icon icon-person"}), 
+	            React.DOM.span({class: "tab-label"}, "Favorites")
+	          ), 
+	          React.DOM.a({class: "tab-item", href: "#"}, 
+	            React.DOM.span({class: "icon icon-gear"}), 
+	            React.DOM.span({class: "tab-label"}, "Search")
+	          )
+	        )
+>>>>>>> feature/wordPage
 	    );
 	  },
 
@@ -21724,6 +21731,7 @@
 	  }
 	]
 
+<<<<<<< HEAD
 
 /***/ },
 /* 166 */
@@ -22037,6 +22045,27 @@
 	      }
 	    }
 	    return 0;
+=======
+	  render: function() {
+	    return (
+	      React.DOM.div(null, 
+	        React.DOM.nav({className: "bar bar-tab"}, 
+	          React.DOM.a({className: "tab-item active", href: "#"}, 
+	            React.DOM.span({className: "icon icon-home"}), 
+	            React.DOM.span({className: "tab-label"}, "Home")
+	          ), 
+	          React.DOM.a({className: "tab-item", href: "#"}, 
+	            React.DOM.span({className: "icon icon-person"}), 
+	            React.DOM.span({className: "tab-label"}, "Profile")
+	          ), 
+	          React.DOM.a({className: "tab-item", href: "#"}, 
+	            React.DOM.span({className: "icon icon-star-filled"}), 
+	            React.DOM.span({className: "tab-label"}, "Favorites")
+	            )
+	        )
+	      )
+	    );
+>>>>>>> feature/wordPage
 	  }
 
 	  /**
@@ -34097,6 +34126,58 @@
 		}
 		return module;
 	}
+
+
+/***/ },
+/* 165 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * @jsx React.DOM
+	 */
+	'use strict';
+
+	var React = __webpack_require__(1);
+	var DefaultLayout = React.createFactory(__webpack_require__(160));
+
+	var DetailPage = React.createClass({
+	  displayName: 'Detail page',
+
+	  getDefaultProps: function() {
+	    return {
+	      layout: DefaultLayout
+	    };
+	  },
+
+	  getInitialState: function() {
+	    return {
+	      dataContext: ['mean1', 'mean2', 'mean3', 'mean4']
+	    };
+	  },
+
+	  render: function() {
+
+	    var listMean = this.state.dataContext.map(function(item) {
+	      return (
+	        React.DOM.li(null, 
+	            React.DOM.p({className: "mean-word"}, item), 
+	            React.DOM.p({className: "mean-example"}, "example")
+	        )
+	      );
+	    })
+
+	    return (
+	      React.DOM.div(null, 
+	        React.DOM.p({className: "word"}, "word"), 
+	        React.DOM.ul({className: "list-mean"}, 
+	          listMean
+	        )
+	      )
+	    );
+	  }
+	});
+
+	module.exports = DetailPage;
 
 
 /***/ }

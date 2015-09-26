@@ -47,6 +47,10 @@ var router = new Router({
   '/history': function() {
     var page = React.createFactory(require('./pages/history'));
     render(router.getRoute(), page);
+  },
+  '/detail': function() {
+    var page = React.createFactory(require('./pages/detail'));
+    render(router.getRoute(), page);
   }
 });
 

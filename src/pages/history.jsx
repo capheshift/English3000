@@ -52,6 +52,7 @@ var HistoryPage = React.createClass({
             {listRender}
           </ul>
         </div>
+
       </div>
     );
   }

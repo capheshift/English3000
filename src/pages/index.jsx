@@ -6,6 +6,7 @@
 var React = require('react');
 var DefaultLayout = React.createFactory(require('../layouts/Default'));
 
+
 var HomePage = React.createClass({
   displayName: 'Home page',
 
@@ -17,7 +18,13 @@ var HomePage = React.createClass({
 
   getInitialState: function() {
     return {
-      dataContext: ['list1', 'list2', 'list3']
+      dataContext:
+      [
+      {word:"mountain", detail:"a large steep hill."},
+      {word:"tree", detail:"a woody perennial plant."},
+      {word:"plant", detail:"a living organism of the kind exemplified by trees, shrubs, herbs."},
+      {word:"plant", detail:"a living organism of the kind exemplified by trees, shrubs, herbs."}
+      ]
     };
   },
 
@@ -25,8 +32,10 @@ var HomePage = React.createClass({
     var listRender = this.state.dataContext.map(function(item) {
       return (
         <li>
-          <a href="#">item one</a>
-          <p>{item}</p>
+          <a href="#/detail">
+            <p className="word-name">{item.word}</p>
+            <p className="example">{item.detail}</p>
+          </a>
         </li>
       );
     })
@@ -38,33 +47,13 @@ var HomePage = React.createClass({
             <input type="text" className="search-box"/>
           </div>
           <div className ="search-right">
-            <button id="btnSearch" className="search-button">sss</button>
+            <button id="btnSearch" className="search-button" >S</button>
           </div>
         </div>
 
         <div className="list-word">
           <ul>
             {listRender}
-            <li>
-              <a href="#">item one</a>
-              <p> detail</p>
-            </li>
-            <li>
-              <a href="#">item one</a>
-              <p> detail</p>
-            </li>
-            <li>
-              <a href="#">item one</a>
-              <p> detail</p>
-            </li>
-            <li>
-              <a href="#">item one</a>
-              <p> detail</p>
-            </li>
-            <li>
-              <a href="#">item one</a>
-              <p> detail</p>
-            </li>
           </ul>
         </div>
       </div>
