@@ -21258,7 +21258,10 @@
 
 	  getInitialState: function() {
 	    return {
-	      dataContext: ['list1', 'list2', 'list3', 'list4']
+	      dataContext:
+	      [{word:"mountain", detail:"a large steep hill."},
+	      {word:"tree", detail:"a woody perennial plant."},
+	      {word:"plant", detail:"a living organism of the kind exemplified by trees, shrubs, herbs."}]
 	    };
 	  },
 
@@ -21267,8 +21270,8 @@
 	      return (
 	        React.DOM.li(null, 
 	          React.DOM.a({href: "#/detail"}, 
-	            React.DOM.p({className: "word-name"}, item), 
-	            React.DOM.p({className: "example"}, "example")
+	            React.DOM.p({className: "word-name"}, item.word), 
+	            React.DOM.p({className: "example"}, item.detail)
 	          )
 	        )
 	      );
@@ -21350,26 +21353,18 @@
 
 	  render:function() {
 	    return (
-	        React.DOM.nav({class: "bar bar-tab"}, 
-	          React.DOM.a({class: "tab-item active", href: "#"}, 
+	        React.DOM.nav({class: "bar-tab"}, 
+	          React.DOM.a({class: "tab-item", href: "#"}, 
 	            React.DOM.span({class: "icon icon-home"}), 
-	            React.DOM.span({class: "tab-label"}, "Home")
+	            React.DOM.span({class: "tab-label"}, "Historys")
 	          ), 
 	          React.DOM.a({class: "tab-item", href: "#"}, 
 	            React.DOM.span({class: "icon icon-person"}), 
-	            React.DOM.span({class: "tab-label"}, "Profile")
-	          ), 
-	          React.DOM.a({class: "tab-item", href: "#"}, 
-	            React.DOM.span({class: "icon icon-star-filled"}), 
 	            React.DOM.span({class: "tab-label"}, "Favorites")
 	          ), 
 	          React.DOM.a({class: "tab-item", href: "#"}, 
-	            React.DOM.span({class: "icon icon-search"}), 
-	            React.DOM.span({class: "tab-label"}, "Search")
-	          ), 
-	          React.DOM.a({class: "tab-item", href: "#"}, 
 	            React.DOM.span({class: "icon icon-gear"}), 
-	            React.DOM.span({class: "tab-label"}, "Settings")
+	            React.DOM.span({class: "tab-label"}, "Search")
 	          )
 	        )
 	    );

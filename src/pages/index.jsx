@@ -18,7 +18,13 @@ var HomePage = React.createClass({
 
   getInitialState: function() {
     return {
-      dataContext: ['list1', 'list2', 'list3', 'list4']
+      dataContext:
+      [
+      {word:"mountain", detail:"a large steep hill."},
+      {word:"tree", detail:"a woody perennial plant."},
+      {word:"plant", detail:"a living organism of the kind exemplified by trees, shrubs, herbs."},
+      {word:"plant", detail:"a living organism of the kind exemplified by trees, shrubs, herbs."}
+      ]
     };
   },
 
@@ -27,8 +33,8 @@ var HomePage = React.createClass({
       return (
         <li>
           <a href="#/detail">
-            <p className="word-name">{item}</p>
-            <p className="example">example</p>
+            <p className="word-name">{item.word}</p>
+            <p className="example">{item.detail}</p>
           </a>
         </li>
       );
