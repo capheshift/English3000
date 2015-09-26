@@ -20,6 +20,7 @@
     "dev-ip": "^1.0.1",
     "director": "^1.2.3",
     "easy-extender": "^2.3.1",
+    "english3kdata": "^0.1.0",
     "eventemitter3": "^0.1.6",
     "flux": "^2.0.1",
     "googleapis": "^2.0.3",

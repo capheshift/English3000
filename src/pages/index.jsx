@@ -5,7 +5,7 @@
 
 var React = require('react');
 var DefaultLayout = React.createFactory(require('../layouts/Default'));
-
+var wordsList = require('english3kdata');
 
 var HomePage = React.createClass({
   displayName: 'Home page',
@@ -18,13 +18,7 @@ var HomePage = React.createClass({
 
   getInitialState: function() {
     return {
-      dataContext:
-      [
-      {word:"mountain", detail:"a large steep hill."},
-      {word:"tree", detail:"a woody perennial plant."},
-      {word:"plant", detail:"a living organism of the kind exemplified by trees, shrubs, herbs."},
-      {word:"plant", detail:"a living organism of the kind exemplified by trees, shrubs, herbs."}
-      ]
+      dataContext: wordsList.getAll()
     };
   },
 
@@ -32,10 +26,10 @@ var HomePage = React.createClass({
     var listRender = this.state.dataContext.map(function(item) {
       return (
         <li>
-          <a href="#/detail">
-            <p className="word-name">{item.word}</p>
-            <p className="example">{item.detail}</p>
-          </a>
+            <a href={'#/detail/' + (item.name)} >
+              <p className='word-name'>{item.name}</p>
+              <p className="example">{item.pronunciation}</p>
+            </a>
         </li>
       );
     })
