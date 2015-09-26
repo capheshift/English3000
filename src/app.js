@@ -19,11 +19,11 @@ var AppConfig = require('./config.js');
  * Check if Page component has a layout property; and if yes, wrap the page
  * into the specified layout, then mount to container in config file.
  */
-function render(uri, page) {
+function render(uri, page, params) {
   var child, props = {
     uri: uri
   };
-  var obj = page();
+  var obj = page(params);
   while (obj.props && obj.props.layout) {
     child = page(props, child);
     props = assign(props, obj.props);
@@ -48,7 +48,8 @@ var router = new Router({
     var page = React.createFactory(require('./pages/history'));
     render(router.getRoute(), page);
   },
-  '/detail': function() {
+  '/detail/:word': function(word) {
+    console.log('word', word);
     var page = React.createFactory(require('./pages/detail'));
     render(router.getRoute(), page);
   }

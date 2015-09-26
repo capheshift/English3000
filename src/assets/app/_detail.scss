@@ -1,21 +1,21 @@
-.word{
+.name{
   font-size: 24PX;
   font-weight: bold;
-  height: 40px;
-}
-.list-mean li{
-  list-style-type: none;
-  border-bottom: 1px dotted #CCC;
-  margin-left: 15px;
-  margin-bottom: 15px;
-}
-.mean-word{
   color: #282828;
-  font-size: 20px;
-  font-weight: bold;
+  float: left;
 }
-.mean-example{
-  color: green;
-  font-size: 14px;
-  font-style: italic;
+.pronunciation{
+  font-size: 16px;
+  padding: 0;
+  float: left;
+}
+.title-word{
+  font-size: 16px;
+  padding: 0;
+}
+.definition{
+  padding: 0;
+}
+.example{
+  padding: 0;
 }
