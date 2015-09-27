@@ -2062,3 +2062,6 @@ a {
 @font-face {
   src: url("fonts/ratchicons.eot");
   src: url("fonts/FontName-webfont.woff") format("woff"), url("fonts/FontName-webfont.ttf") format("truetype"); }
+
+body {
+  position: static; }

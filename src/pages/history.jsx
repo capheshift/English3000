@@ -10,50 +10,42 @@ var wordsList = require('english3kdata');
 var HistoryPage = React.createClass({
   displayName: 'History page',
 
-  getDefaultProps: function() {
+   getDefaultProps: function() {
     return {
       layout: DefaultLayout
     };
   },
 
   getInitialState: function() {
-    console.log('wordsList', wordsList.getAll());
     return {
       dataContext: wordsList.getAll()
-    }
-    },
+    };
+  },
 
   render: function() {
     var listRender = this.state.dataContext.map(function(item) {
       return (
         <li>
-          <a href="#">
-            <p className="word-name">{item.name}</p>
-            <p className="example">{item.definition}</p>
+            <a href={'#/detail/' + (item.name)} >
+              <p className='word-name'>{item.name}</p>
+              <p className="example">{item.pronunciation}</p>
+            </a>
             <hr/>
-          </a>
         </li>
+
       );
     })
 
     return (
       <div>
-      <h1>History</h1>
-        <div className="search-region">
-          <div className ="search-left">
-            <input type="text" className="search-box"/>
-          </div>
-          <div className ="search-right">
-            <button id="btnSearch" className="search-button">Search</button>
-          </div>
-        </div>
+      <h1>History of word has been search</h1>
+      <hr/>
 
         <div className="list-word">
           <ul>
             {listRender}
           </ul>
         </div>
-
       </div>
     );
   }

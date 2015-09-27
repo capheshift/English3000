@@ -30,18 +30,20 @@ var HomePage = React.createClass({
               <p className='word-name'>{item.name}</p>
               <p className="example">{item.pronunciation}</p>
             </a>
+            <hr/>
         </li>
       );
     })
 
     return (
       <div>
+      <h1>English3000 app - Learn English easy than ever</h1>
         <div className="search-region">
           <div className ="search-left">
             <input type="text" className="search-box"/>
           </div>
           <div className ="search-right">
-            <button id="btnSearch" className="search-button" >S</button>
+            <button id="btnSearch" className="search-button" >Search</button>
           </div>
         </div>
 
