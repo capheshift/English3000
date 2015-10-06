@@ -6,6 +6,7 @@
 var React = require('react');
 var DefaultLayout = React.createFactory(require('../layouts/Default'));
 var wordsList = require('english3kdata');
+var lodash = require('lodash');
 
 var HomePage = React.createClass({
   displayName: 'Home page',
@@ -18,8 +19,45 @@ var HomePage = React.createClass({
 
   getInitialState: function() {
     return {
-      dataContext: wordsList.getAll()
+      dataContext: this.randomWord(),
+      wordSearch : ""
     };
+  },
+
+  removeNullWord: function(){
+
+  },
+
+  filterList: function(wordSearch){
+    return lodash.filter(wordsList.getAll(),function(word){
+    if(word.name == undefined){
+      return false;
+    }else{
+      if(word.name.indexOf(wordSearch) == -1){
+
+      }else{
+        return true;
+      }
+    }
+  });
+  },
+
+  onChange: function(event){
+    this.setState({
+      wordSearch: event.target.value,
+      dataContext: this.filterList(event.target.value),
+    });
+    if(event.target.value == ""){
+      this.setState({dataContext: this.randomWord()});
+    }
+  },
+
+  randomWord: function(){
+      var randomWord = wordsList.getAll()[Math.floor(Math.random()*wordsList.getAll().length)];
+      if(randomWord.name == undefined){
+        return;
+      }
+      return [randomWord];
   },
 
   render: function() {
@@ -39,12 +77,7 @@ var HomePage = React.createClass({
       <div>
       <h1>English3000 app - Learn English easy than ever</h1>
         <div className="search-region">
-          <div className ="search-left">
-            <input type="text" className="search-box"/>
-          </div>
-          <div className ="search-right">
-            <button id="btnSearch" className="search-button" >Search</button>
-          </div>
+            <input type="text" className="search-box" placeholder="Fill your word ..." value={this.state.wordSearch} onChange={this.onChange}/>
         </div>
 
         <div className="list-word">
