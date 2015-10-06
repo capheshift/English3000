@@ -19,11 +19,11 @@ var AppConfig = require('./config.js');
  * Check if Page component has a layout property; and if yes, wrap the page
  * into the specified layout, then mount to container in config file.
  */
-function render(uri, page, params) {
+function render(uri, page) {
   var child, props = {
     uri: uri
   };
-  var obj = page(params);
+  var obj = page();
   while (obj.props && obj.props.layout) {
     child = page(props, child);
     props = assign(props, obj.props);

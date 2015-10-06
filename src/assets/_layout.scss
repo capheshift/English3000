@@ -1,0 +1,49 @@
+@import 'libs/variables';
+
+.bar-nav {
+  background-color: $header-bg-color;
+
+  .title {
+    color: $header-color;
+  }
+}
+
+.bar {
+  .btn-link {
+    color: $header-color;
+  }
+}
+
+.container-ratchet {
+  position: absolute;
+  top: 44px;
+  bottom: 51px;
+  padding: $gutter;
+  overflow-y: scroll;
+  width: 100%;
+}
+
+.pull-right {
+  float: right;
+}
+
+.table-view {
+  margin-left: -$gutter;
+  margin-right: -$gutter;
+}
+
+li {
+  margin-bottom: 0;
+}
+
+.table-view-cell {
+  padding-right: 40px;
+
+  > a:not(.btn) {
+    margin-right: -45px;
+  }
+}
+
+.bar-tab .tab-item.active, .bar-tab .tab-item:active {
+  color: $header-bg-color;
+}

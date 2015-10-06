@@ -4,15 +4,16 @@
 'use strict';
 
 var React = require('react');
-var DefaultLayout = React.createFactory(require('../layouts/Default'));
+var RatchetLayout = React.createFactory(require('../layouts/RatchetLayout'));
 var wordsList = require('english3kdata');
+var lodash = require('lodash');
 
 var DetailPage = React.createClass({
-  displayName: 'Detail page',
+  displayName: 'Home page',
 
   getDefaultProps: function() {
     return {
-      layout: DefaultLayout
+      layout: RatchetLayout
     };
   },
 

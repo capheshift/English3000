@@ -4,26 +4,27 @@
 'use strict';
 
 var React = require('react');
-var DefaultLayout = React.createFactory(require('../layouts/Default'));
+var RatchetLayout = React.createFactory(require('../layouts/RatchetLayout'));
 var wordsList = require('english3kdata');
+var lodash = require('lodash');
 
 var HistoryPage = React.createClass({
-  displayName: 'History page',
+  displayName: 'Home page',
 
-   getDefaultProps: function() {
+  getDefaultProps: function() {
     return {
-      layout: DefaultLayout
+      layout: RatchetLayout
     };
   },
 
   getInitialState: function() {
     return {
-      dataContext: wordsList.getAll()
+      dataHistory: wordsList.getAll()
     };
   },
 
   render: function() {
-    var listRender = this.state.dataContext.map(function(item) {
+    var listRender = this.state.dataHistory.map(function(item) {
       return (
         <li>
             <a href={'#/detail/' + (item.name)} >

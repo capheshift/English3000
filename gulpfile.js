@@ -11,41 +11,39 @@ var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
 var del = require('del');
 var path = require('path');
-var merge = require('merge-stream');
 var runSequence = require('run-sequence');
 var webpack = require('webpack');
 var browserSync = require('browser-sync');
-var pagespeed = require('psi');
 var argv = require('minimist')(process.argv.slice(2));
 
 // Settings
 var DEST = './build'; // The build output folder
 var RELEASE = !!argv.release; // Minimize and optimize during a build?
 var WATCH = !!argv.watch; // Watch build process
-var AUTOPREFIXER_BROWSERS = [ // https://github.com/ai/autoprefixer
-  'ie >= 10',
-  'ie_mob >= 10',
-  'ff >= 30',
-  'chrome >= 34',
-  'safari >= 7',
-  'opera >= 23',
-  'ios >= 7',
-  'android >= 4.4',
-  'bb >= 10'
-];
+// var AUTOPREFIXER_BROWSERS = [ // https://github.com/ai/autoprefixer
+//   'ie >= 10',
+//   'ie_mob >= 10',
+//   'ff >= 30',
+//   'chrome >= 34',
+//   'safari >= 7',
+//   'opera >= 23',
+//   'ios >= 7',
+//   'android >= 4.4',
+//   'bb >= 10'
+// ];
 
 var src = {};
 var watch = false || WATCH;
-var pkgs = (function() {
-  var pkgs = {};
-  var map = function(source) {
-    for (var key in source) {
-      pkgs[key.replace(/[^a-z0-9]/gi, '')] = source[key].substring(1);
-    }
-  };
-  map(require('./package.json').dependencies);
-  return pkgs;
-}());
+// var pkgs = (function() {
+//   var pkgs = {};
+//   var map = function(source) {
+//     for (var key in source) {
+//       pkgs[key.replace(/[^a-z0-9]/gi, '')] = source[key].substring(1);
+//     }
+//   };
+//   map(require('./package.json').dependencies);
+//   return pkgs;
+// }());
 
 // The default task
 gulp.task('default', ['serve']);
@@ -54,22 +52,18 @@ gulp.task('default', ['serve']);
 gulp.task('clean', del.bind(null, [DEST]));
 
 // Assets
-gulp.task('assets', function() {
-  src.assets = ['src/assets/**'];
+gulp.task('public', function() {
+  src.public = ['src/public/**'];
   // Out Put Location
-  var out = DEST + '/assets';
+  var out = DEST + '/';
 
   // Compile Scss
-  return gulp.src(src.assets)
-    // .pipe($.changed(out, {
-    //   extension: '.css'
-    // }))
-    .pipe($.if('*.scss', $.sass()))
-    .pipe(gulp.dest(out));
-    // .pipe($.size({
-    //   title: 'assets'
-    // }))
-    // .pipe(browserSync.stream());
+  return gulp.src(src.public)
+    .pipe($.changed(out))
+    .pipe(gulp.dest(out))
+    .pipe($.size({
+      title: 'public'
+    }));
 });
 
 // Assets
@@ -80,17 +74,13 @@ gulp.task('sass', function() {
 
   // Compile Scss
   return gulp.src(src.scss)
-    // .pipe($.changed(out, {
-    //   extension: '.css'
-    // }))
     .pipe($.sass({
       onError: console.error.bind(console, 'Sass error:')
     }))
-    .pipe(gulp.dest(out));
-    // .pipe($.size({
-    //   title: 'assets'
-    // }))
-    // .pipe(browserSync.stream());
+    .pipe(gulp.dest(out))
+    .pipe($.size({
+      title: 'assets'
+    }));
 });
 
 // HTML pages
@@ -122,9 +112,11 @@ gulp.task('bundle', function(cb) {
       throw new $.util.PluginError('webpack', err);
     }
 
-    !!argv.verbose && $.util.log('[webpack]', stats.toString({
-      colors: true
-    }));
+    if (!!argv.verbose) {
+      $.util.log('[webpack]', stats.toString({
+        colors: true
+      }));
+    }
 
     if (!started) {
       started = true;
@@ -141,10 +133,10 @@ gulp.task('bundle', function(cb) {
 
 // Build the app from source code
 gulp.task('build', ['clean'], function(cb) {
-  // runSequence(['assets', 'pages', 'bundle'], function() {
-  runSequence(['sass', 'pages', 'bundle'], function() {
+  runSequence(['public', 'sass', 'pages', 'bundle'], function() {
     // If watch flag is set
     if (watch) {
+      gulp.watch(src.public, ['public']);
       gulp.watch(src.assets, ['assets']);
       gulp.watch(src.pages, ['pages']);
       gulp.watch(DEST + '/**/*.*', function(file) {
@@ -190,7 +182,7 @@ gulp.task('serve', function(cb) {
       }
     });
 
-    // gulp.watch(src.assets, ['assets']);
+    gulp.watch(src.public, ['public']);
     gulp.watch(src.scss, ['sass']);
     gulp.watch(src.pages, ['pages']);
     gulp.watch(DEST + '/**/*.*', function(file) {

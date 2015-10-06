@@ -2,23 +2,7 @@
  * App Styles
  */
 
-
-@import 'normalize';
-@import 'skeleton';
-@import 'app/header';
-@import 'ratchet';
-@import 'app/index';
-@import 'app/detail';
-@import 'app/navbar';
-@import 'app/default';
-
-@font-face {
-  src: url('fonts/ratchicons.eot');
-  src: url('fonts/FontName-webfont.woff') format('woff'),
-       url('fonts/FontName-webfont.ttf') format('truetype');
-}
-
-body {
-  position: static;
-}
-
+@import 'libs/normalize';
+@import 'libs/skeleton';
+@import 'libs/variables';
+@import 'layout';
