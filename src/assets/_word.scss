@@ -1,0 +1,41 @@
+
+.list-word li{
+  list-style: none;
+  margin-bottom: 3%;
+}
+.list-word li:hover{
+  border: 2px solid brown;
+  transition: border 0.5s;
+  p {
+    color: brown;
+  }
+}
+
+.list-word a{
+  text-decoration: none;
+}
+
+.word-name {
+  font-size: 220%;
+  color: brown;
+  margin-left: 2%;
+}
+
+.example {
+  font-size: 120%;
+  margin-left: 1%;
+  color: #ccb357;
+}
+
+.list-word p {
+  margin-left: 2%;
+  margin-right: 2%;
+  font-style: italic;
+}
+
+.header-index {
+  font-size: 150%;
+  font-style: italic;
+  margin-right: 5%;
+  float: right;
+}

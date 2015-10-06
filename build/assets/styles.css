@@ -852,3 +852,73 @@ li {
 
 .bar-tab .tab-item.active, .bar-tab .tab-item:active {
   color: #985321; }
+
+.list-word li {
+  list-style: none;
+  margin-bottom: 3%; }
+
+.list-word li:hover {
+  border: 2px solid brown;
+  transition: border 0.5s; }
+  .list-word li:hover p {
+    color: brown; }
+
+.list-word a {
+  text-decoration: none; }
+
+.word-name {
+  font-size: 220%;
+  color: brown;
+  margin-left: 2%; }
+
+.example {
+  font-size: 120%;
+  margin-left: 1%;
+  color: #ccb357; }
+
+.list-word p {
+  margin-left: 2%;
+  margin-right: 2%;
+  font-style: italic; }
+
+.header-index {
+  font-size: 150%;
+  font-style: italic;
+  margin-right: 5%;
+  float: right; }
+
+.word-detail {
+  margin: 2%; }
+  .word-detail button {
+    float: right; }
+
+.word-detail .name {
+  font-size: 250%;
+  color: brown;
+  float: left;
+  margin-right: 1%; }
+
+.word-detail .title-word {
+  font-size: 100%;
+  color: #ccb357;
+  margin-bottom: 0px; }
+
+.word-detail .pronunciation {
+  font-size: 120%;
+  color: #ccb357;
+  float: left;
+  width: 100%; }
+
+.word-detail .definition {
+  margin-top: 2%; }
+
+html {
+  background-color: #fff;
+  color: #000;
+  font-family: 'Lato',san-serif; }
+
+h1 {
+  font-size: 300%; }
+
+.search-region {
+  width: 100%; }

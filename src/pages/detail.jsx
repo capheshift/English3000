@@ -19,7 +19,6 @@ var DetailPage = React.createClass({
 
   getInitialState: function() {
     var wordDetail = this.props.uri[1];
-    console.log('getInitialState', wordDetail);
     return {
       dataContext: wordsList.find({name: wordDetail})
     };
@@ -29,22 +28,22 @@ var DetailPage = React.createClass({
 
     var listMean = this.state.dataContext.map(function(item) {
       return (
-        <li>
-            <div>
-              <p className="name">{item.name}</p><hr/>
-              <p className="pronunciation">{item.pronunciation}</p><hr/>
-            </div>
-            <p className="title-word">{item.data[0].title}</p><hr/>
-            <p className="definition">{item.data[0].definition}</p><hr/>
-        </li>
+        <div>
+            <span className="name">{item.name}</span><br/>
+            <span className="title-word">({item.data[0].title})</span>
+            <span className="pronunciation">{item.pronunciation}</span>
+            <p className="definition">{item.data[0].definition}</p>
+        </div>
       );
     })
 
     return (
       <div>
-        <ul className="list-mean">
+        <div className="word-detail">
           {listMean}
-        </ul>
+          <button> <span className="icon icon-star"></span> Save word</button>
+        </div>
+
       </div>
     );
   }

@@ -28,12 +28,10 @@ var HistoryPage = React.createClass({
       return (
         <li>
             <a href={'#/detail/' + (item.name)} >
-              <p className='word-name'>{item.name}</p>
-              <p className="example">{item.pronunciation}</p>
+              <span className='word-name'>{item.name}</span>
+              <span className="example">({item.pronunciation})</span>
             </a>
-            <hr/>
         </li>
-
       );
     })
 

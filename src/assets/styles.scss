@@ -6,3 +6,19 @@
 @import 'libs/skeleton';
 @import 'libs/variables';
 @import 'layout';
+@import 'word';
+@import 'detail';
+
+html {
+  background-color: #fff;
+  color: #000;
+  font-family: 'Lato',san-serif;
+}
+
+h1 {
+  font-size: 300%;
+}
+
+.search-region {
+  width: 100%;
+}

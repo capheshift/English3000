@@ -1,0 +1,30 @@
+.word-detail {
+  margin: 2%;
+  button {
+    float: right;
+  }
+}
+
+.word-detail .name {
+  font-size: 250%;
+  color: brown;
+  float: left;
+  margin-right: 1%;
+}
+
+.word-detail .title-word {
+  font-size: 100%;
+  color: #ccb357;
+  margin-bottom: 0px;
+}
+
+.word-detail .pronunciation {
+  font-size: 120%;
+  color: #ccb357;
+  float: left;
+  width: 100%;
+}
+
+.word-detail .definition {
+  margin-top: 2%;
+}

@@ -20,7 +20,8 @@ var HomePage = React.createClass({
   getInitialState: function() {
     return {
       dataContext: this.randomWord(),
-      wordSearch : ""
+      wordSearch : "",
+      header: "Your world you need learn today"
     };
   },
 
@@ -46,9 +47,12 @@ var HomePage = React.createClass({
     this.setState({
       wordSearch: event.target.value,
       dataContext: this.filterList(event.target.value),
+      header: ""
     });
     if(event.target.value == ""){
-      this.setState({dataContext: this.randomWord()});
+      this.setState({dataContext: this.randomWord(),
+        header: "Your world you need learn today"
+      });
     }
   },
 
@@ -65,21 +69,20 @@ var HomePage = React.createClass({
       return (
         <li>
             <a href={'#/detail/' + (item.name)} >
-              <p className='word-name'>{item.name}</p>
-              <p className="example">{item.pronunciation}</p>
+              <span className='word-name'>{item.name}</span>
+              <span className="example">({item.pronunciation})</span>
+              <p>{item.data[0].definition}</p>
             </a>
-            <hr/>
         </li>
       );
     })
 
     return (
       <div>
-      <h1>English3000 app - Learn English easy than ever</h1>
         <div className="search-region">
             <input type="text" className="search-box" placeholder="Fill your word ..." value={this.state.wordSearch} onChange={this.onChange}/>
         </div>
-
+          <span className="header-index">{this.state.header}</span>
         <div className="list-word">
           <ul>
             {listRender}
